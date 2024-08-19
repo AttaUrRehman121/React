@@ -1,0 +1,18 @@
+
+.ButtonContainer
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.Button
+{
+    width: 50px;
+    height: 55px;
+    margin: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}

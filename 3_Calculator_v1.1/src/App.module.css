@@ -1,0 +1,16 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.calculator
+{
+    
+    border: 1px solid black;
+    width: 300px;
+    border-radius: 5px;
+}
+
+
+

@@ -1,0 +1,18 @@
+.kg-items
+{
+    background-color: aliceblue;
+    color: aqua;
+}
+
+
+.kgSpan
+{
+    font-weight: 600;
+    color: rgb(67, 97, 97);
+}
+
+.Button
+{
+    float: right;
+    cursor: pointer;
+}

@@ -1,0 +1,37 @@
+h1
+{
+    text-align: center;
+    color: #dd9494;
+    font-size: 2.5em;
+    margin-top: 0;
+    padding-top: 1em;
+    font-weight: 700;
+}
+
+
+
+input
+{
+    width: 100%;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+
+
+.item-comtainer
+{
+    text-align: left;
+}
+
+.kg-button
+{
+    min-width: 80px;
+}
+.kg-row
+{
+    margin: 10px 5px;
+}

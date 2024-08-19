@@ -1,0 +1,10 @@
+.conatiner
+{
+
+    background-color: #d76868;
+    margin:  15px;
+    width: 50%;
+    border-radius: 10px;
+    min-width: 200px;
+    padding: 10px;
+}
