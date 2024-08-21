@@ -1,0 +1,82 @@
+body {
+    font-family: "Times New Roman", Times, serif;
+    background: url('sea.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: black;
+    text-align: start;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+label {
+    text-align: start;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: black;
+}
+
+input, textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    font-family: "Times New Roman", Times, serif;
+    margin-bottom: 10px;
+}
+
+textarea {
+    resize: none;
+    width: 580px;
+}
+.form-group
+{
+    width: 600px;
+}
+button {
+    padding: 10px;
+    font-size: 1em;
+    font-family: "Times New Roman", Times, serif;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+button:hover {
+    background-color: #c7c2c2;
+}
