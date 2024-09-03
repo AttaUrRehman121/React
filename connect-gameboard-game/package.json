@@ -1,5 +1,5 @@
 {
-  "name": "connect-4",
+  "name": "connect-gameboard-game",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
