@@ -4,16 +4,15 @@ const onClicked = (id) => {
   console.log("clicked " + id);
 };
 
-function GameCircle({ id, color }) {
+const GameCircle = ({ id, color }) => {
   return (
     <div
-      className="gameCircle"
-      style={{
-        backgroundColor: color,
-      }}
+      className={`gameCircle ${id % 2 === 0 ? "odd" : "even"}`}
+      // just add dynamicly chnaging color based on condition
+
       onClick={() => onClicked(id)}
     ></div>
   );
-}
+};
 
 export default GameCircle;
