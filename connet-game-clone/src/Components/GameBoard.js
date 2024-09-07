@@ -3,21 +3,38 @@ import React, { useState } from "react";
 import "./Game.css";
 import Header from "./Header";
 import Footer from "./Footer";
+import {
+  No_circle,
+  No_player,
+  Player_1,
+  Player_2,
+  Game_state_PLAYING,
+  Game_state_Win,
+  Game_state_DRAW,
+} from "./constents";
 
-import { isWinner } from "./helper";
+import { isDraw, isWinner } from "./helper";
 
-// created some const values so it never changes
-const No_player = 0;
-const Player_1 = 1;
-const Player_2 = 2;
+// // created some const values so it never changes
+// const No_player = 0;
+// const Player_1 = 1;
+// const Player_2 = 2;
 
-const No_circle = 16;
+// const No_circle = 16;
+
+// //  now we declared some state of games like start , playig stopped etc
+
+// const Game_state_IDLE = 0;
+// const Game_state_PLAYING = 1;
+// const Game_state_Win = 2;
+// const Game_state_DRAW = 3;
 
 const GameBoard = () => {
-  const [gameState, setGameState] = useState(Array(16).fill(No_player)); // created a state to store total number of player and starting player will be no player
+  const [gameBoard, setgameBoard] = useState(Array(16).fill(No_player)); // created a state to store total number of player and starting player will be no player
   const [currentPlayer, setCurrentPlayer] = useState(Player_1); // second state to make sure which player is player currentkly and update state according to that
-
-  console.log(gameState);
+  const [gameState, setgameState] = useState(Game_state_PLAYING); // created a new useState to determine and set the current state play or in idle state etc
+  const [winPlayer, setwinPlayer] = useState(No_player);
+  console.log(gameBoard);
 
   const iniBoard = () =>
     // iniBoard function to render circle in initial state whem starts the game
@@ -33,13 +50,24 @@ const GameBoard = () => {
   const onCircleClicked = (id) => {
     console.log("Circle clicked" + id);
 
-    //gameState[id] = currentPlayer; // stating player will be player_1
+    if (gameBoard[id] !== No_player) return; // this condition make sure that player don't click twice on same circle
 
-    if (isWinner(gameState, id, currentPlayer)) {
+    if (gameState !== Game_state_PLAYING) return; // this condition make sure that if any of player win the game should stop over there it don't proced to next circle or palyer not able to fill next circle
+    //gameBoard[id] = currentPlayer; // stating player will be player_1
+
+    if (isWinner(gameBoard, id, currentPlayer)) {
       // it determines the player position give the result is player win or not
-      console.log("winner");
+      setgameState(Game_state_Win);
+      setwinPlayer(currentPlayer);
     }
-    setGameState((prev) => {
+
+    if (isDraw(gameBoard, id, currentPlayer)) {
+      // it determines the player position give the result is player draw the match
+      setgameState(Game_state_DRAW);
+      setwinPlayer(No_player);
+    }
+
+    setgameBoard((prev) => {
       // recommended way to update array and state
       return prev.map((circle, pos) => {
         if (pos === id) return currentPlayer;
@@ -51,7 +79,7 @@ const GameBoard = () => {
 
     setCurrentPlayer(currentPlayer === Player_1 ? Player_2 : Player_1); // this condition checks which player is currently playing and next which player should play
 
-    console.log(gameState);
+    console.log(gameBoard);
   };
 
   const render_circle = (id) => {
@@ -60,7 +88,7 @@ const GameBoard = () => {
       <GameCircle
         key={id}
         id={id}
-        className={`player_${gameState[id]}`} // used the Js template to update state circle color
+        className={`player_${gameBoard[id]}`} // used the Js template to update state circle color
         onCircleClicked={onCircleClicked} // called the circle clicked function
       ></GameCircle>
     );
@@ -94,7 +122,11 @@ const GameBoard = () => {
       {render_circle(13)}
       {render_circle(14)}
       {render_circle(15)} */}
-        <Header player={currentPlayer} />
+        <Header
+          gameState={gameState}
+          currentPlayer={currentPlayer}
+          winPlayer={winPlayer}
+        />
         {iniBoard()}
       </div>
 

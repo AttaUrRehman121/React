@@ -45,7 +45,8 @@ of what each property is doing: */
 {
     font-size:  30px;
     font-weight: bold;
-    width: 200px;
+    text-align: center;
+    width: 250px;
     margin: 0;
     position: absolute;
     top: 50%;

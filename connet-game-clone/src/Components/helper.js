@@ -1,5 +1,5 @@
-export const isWinner = (gameState, currentMove, currentPlayer) => {
-  let borad = [...gameState];
+export const isWinner = (gameBoard, currentMove, currentPlayer) => {
+  let borad = [...gameBoard]; // here we created a copy of array of state
   borad[currentMove] = currentPlayer;
 
   const winList = [
@@ -29,4 +29,13 @@ export const isWinner = (gameState, currentMove, currentPlayer) => {
     }
   }
   return false;
+};
+
+export const isDraw = (gameBoard, currentMove, currentPlayer) => {
+  // we created that to determine when the game draw and no budy wins the game
+  let Borad = [...gameBoard];
+  Borad[currentMove] = currentPlayer;
+  let count = Borad.reduce((n, x) => n + (x === 0), 0);
+  console.log(`count ${count}`);
+  return count === 0;
 };
