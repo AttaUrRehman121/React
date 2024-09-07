@@ -1,16 +1,12 @@
 import "./Game.css";
 
-const onClicked = (id) => {
-  console.log("clicked " + id);
-};
-
-const GameCircle = ({ id, color }) => {
+const GameCircle = ({ id, onCircleClicked, className }) => {
   return (
     <div
-      className={`gameCircle ${id % 2 === 0 ? "odd" : "even"}`}
-      // just add dynamicly chnaging color based on condition
+      className={`gameCircle ${className}`}
+      onClick={() => onCircleClicked(id)}
 
-      onClick={() => onClicked(id)}
+      // just add dynamicly chnaging color based on condition
     ></div>
   );
 };
