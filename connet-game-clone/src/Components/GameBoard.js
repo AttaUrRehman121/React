@@ -1,5 +1,5 @@
 import GameCircle from "./GameCircle";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Game.css";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -35,6 +35,40 @@ const GameBoard = () => {
   const [gameState, setgameState] = useState(Game_state_PLAYING); // created a new useState to determine and set the current state play or in idle state etc
   const [winPlayer, setwinPlayer] = useState(No_player);
   console.log(gameBoard);
+
+  // useEffect(() => {
+  //   // useEffect is a hook in React that allows you to perform side effects in functional components
+  //   // It is commonly used for fetching data, subscribing to events, or updating the DOM
+  //   // In this case, you can use useEffect to check if the game is over (win or draw) and perform any necessary actions
+
+  //   if (gameState === Game_state_Win) {
+  //     // If the game is won by a player, you can display a message or perform any other actions
+  //     console.log(`Player ${winPlayer} wins!`);
+  //   }
+
+  //   if (gameState === Game_state_DRAW) {
+  //     // If the game is a draw, you can display a message or perform any other actions
+  //     console.log("It's a draw!");
+  //   }
+
+  //   // You can also use useEffect to perform cleanup actions when the component is unmounted
+  //   return () => {
+  //     // Cleanup code here
+  //   };
+  // }, [gameState, winPlayer]);
+
+  useEffect(() => {
+    // we used useEffect to change the state effect of the game so the reset and start from
+    console.log("initiliazing the Game");
+
+    iniGame();
+  }, []);
+
+  const iniGame = () => {
+    setgameBoard(Array(16).fill(No_player));
+    setCurrentPlayer(Player_1);
+    setgameState(Game_state_PLAYING);
+  };
 
   const iniBoard = () =>
     // iniBoard function to render circle in initial state whem starts the game
@@ -130,7 +164,7 @@ const GameBoard = () => {
         {iniBoard()}
       </div>
 
-      <Footer></Footer>
+      <Footer onClickEvent={iniGame}></Footer>
     </>
   );
 };
