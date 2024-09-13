@@ -162,6 +162,7 @@ const GameBoard = () => {
       {render_circle(13)}
       {render_circle(14)}
       {render_circle(15)} */}
+
         <Header
           gameState={gameState}
           currentPlayer={currentPlayer}
@@ -169,7 +170,6 @@ const GameBoard = () => {
         />
         {iniBoard()}
       </div>
-
       <Footer
         onNewGameClick={iniGame}
         onSuggestClick={suggest}

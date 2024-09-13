@@ -18,6 +18,8 @@
 
 }
 
+
+
 body
 {
     background-color: var(--backgroud-color);
@@ -170,3 +172,8 @@ of what each property is doing: */
             transform: scale(1);
         }
     }
+
+
+
+    
+    
