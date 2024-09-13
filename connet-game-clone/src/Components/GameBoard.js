@@ -13,7 +13,7 @@ import {
   Game_state_DRAW,
 } from "./constents";
 
-import { isDraw, isWinner } from "./helper";
+import { getComputerMove, isDraw, isWinner } from "./helper";
 
 // // created some const values so it never changes
 // const No_player = 0;
@@ -80,6 +80,12 @@ const GameBoard = () => {
       }
       return circles;
     };
+
+  const suggest = () => {
+    // suggest function to suggest the circle to fill by computer
+    console.log("suggestion clicked");
+    onCircleClicked(getComputerMove(gameBoard));
+  };
 
   const onCircleClicked = (id) => {
     console.log("Circle clicked" + id);
@@ -164,7 +170,11 @@ const GameBoard = () => {
         {iniBoard()}
       </div>
 
-      <Footer onClickEvent={iniGame}></Footer>
+      <Footer
+        onNewGameClick={iniGame}
+        onSuggestClick={suggest}
+        gameState={gameState}
+      ></Footer>
     </>
   );
 };
