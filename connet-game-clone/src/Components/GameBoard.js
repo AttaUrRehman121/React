@@ -1,3 +1,7 @@
+// in this project we used some importent cocept of react like , useState, useEffect , Callbacks function. we learn props , dunamic styling inline , dynamic classes.
+
+// that was fun
+
 import GameCircle from "./GameCircle";
 import React, { useEffect, useState } from "react";
 import "./Game.css";
