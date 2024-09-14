@@ -1,0 +1,63 @@
+{
+    "categories": [
+        {
+        "id": 1, 
+        "name" : "Fridges"
+        },
+        {
+        "id": 2, 
+        "name" : "Kattles"
+        },
+        {
+            "id": 3, 
+            "name" : "Television"
+        },
+        {
+            "id": 4,
+            "name": "Electronics",
+            "description": "Electronic products"
+        },
+        {
+            "id": 5,
+            "name": "Clothing",
+            "description": "Clothing products"
+        },
+        {
+            "id": 6,
+            "name": "Books",
+            "description": "Books products"
+        }
+    ] ,
+    "products": [
+        {
+            "id": 1,
+            "title": "Laptop",
+            "price": 50000,
+            "description": "Laptop description",
+            "categoryId": 1
+        },
+        {
+            "id": 2,
+            "categoryId": 2,
+            "title":  "beko whote Fridge Freezer",
+            "price": 50000
+
+
+
+        },
+        {
+            "id": 3,
+            "categoryId": 3,
+            "title":  "beko whote Fridge Freezer",
+            "price": 50000
+            
+        }
+    ],
+    "users": [
+
+    ],
+    "orders": [
+
+    ]
+
+}
